@@ -1,0 +1,102 @@
+/* css/horizontal-parallax.css */
+
+/* Sembunyikan scrollbar vertikal bawaan dan aktifkan horizontal */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Sembunyikan horizontal scrollbar dari body */
+    overflow-y: scroll; /* Aktifkan vertical scrollbar untuk memicu parallax */
+    scroll-behavior: smooth; /* Opsional: Untuk scroll yang lebih mulus */
+}
+
+/* Container utama yang akan di-scroll secara vertikal */
+#main-content {
+    /* min-height perlu cukup besar untuk menampung semua section horizontal */
+    /* Contoh: 4 section * 100vh = 400vh */
+    min-height: 400vh; /* SESUAIKAN INI DENGAN JUMLAH SECTION ANDA */
+    width: 100%;
+    position: relative;
+    /* Background color dari main-content akan terlihat saat discroll */
+    background-color: var(--warna-primer); /* Warna latar belakang umum */
+}
+
+/* Container yang akan menahan main-wrapper secara fixed di viewport */
+.horizontal-scroll-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Sembunyikan scrollbar dari container ini */
+    display: flex; /* Untuk menempatkan main-wrapper di dalamnya */
+    align-items: center; /* Pusat vertikal main-wrapper */
+    justify-content: flex-start; /* main-wrapper akan digulir dari kiri */
+    z-index: 1; /* Di bawah overlay, tapi di atas canvas jika ada */
+}
+
+/* Wrapper yang berisi semua section, ini yang akan digerakkan translateX() */
+.main-wrapper {
+    display: flex; /* Atur layout flexbox untuk menempatkan section secara horizontal */
+    width: fit-content; /* Biarkan lebar menyesuaikan konten */
+    height: 100vh; /* Tinggi penuh viewport */
+    white-space: nowrap; /* Penting: Cegah konten membungkus ke baris baru */
+    /* Transformasi akan diatur oleh JS */
+    will-change: transform; /* Optimasi performa */
+}
+
+/* Setiap section akan menjadi "slide" horizontal */
+.main-section {
+    flex: 0 0 100vw; /* Setiap section mengambil 100% lebar viewport */
+    height: 100vh; /* Setiap section mengambil 100% tinggi viewport */
+    display: flex; /* Gunakan flex untuk penempatan konten di tengah */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: var(--warna-merah-tua); /* Contoh latar belakang default untuk section */
+    color: var(--warna-putih); /* Contoh warna teks default untuk section */
+    text-align: center;
+    white-space: normal; /* Biarkan teks di dalam section membungkus */
+    position: relative; /* Penting untuk elemen parallax di dalamnya */
+    overflow: hidden; /* Sembunyikan apapun yang keluar dari section (penting untuk parallax) */
+}
+
+/* Gaya untuk elemen-elemen parallax di dalam section */
+.parallax-element {
+    will-change: transform; /* Memberi tahu browser untuk mengoptimalkan animasi transform */
+}
+
+/* Navbar tetap di bawah (tidak terpengaruh scroll horizontal) */
+.navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+/* Footer juga perlu disesuaikan agar tidak mengganggu scroll horizontal */
+footer {
+    /* Footer sekarang menjadi bagian dari main-content yang di-scroll vertikal,
+       sehingga posisinya akan mengikuti scroll di bagian bawah min-height. */
+    width: 100%; /* Pastikan footer mengambil lebar penuh */
+    padding: 20px;
+    background-color: var(--warna-hitam); /* Contoh warna hitam */
+    color: var(--warna-putih);
+    text-align: center;
+    box-sizing: border-box;
+    /* Hilangkan position: relative; agar tidak mengganggu flow */
+}
+
+/* Media Queries dasar untuk responsivitas */
+@media (max-width: 768px) {
+    /* Sesuaikan flex-basis untuk section jika ingin lebih responsif */
+    .main-section {
+        flex: 0 0 100vw; /* Tetap 100vw */
+    }
+}

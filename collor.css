@@ -1,0 +1,110 @@
+:root {
+  /* 🌸 Warna Sangat Lembut (Pastel Lembut) */
+  --Biru-alice: #F0F8FF;          /* Biru Alice */
+  --Biru-langit-muda: #F0FFFF;               /* Biru Langit Muda */
+  --krem: #F5F5DC;               /* Krem */
+  --ungu-lavender: #E6E6FA;            /* Ungu Lavender */
+  --krim-limit: #F5FFFA;          /* Krim Mint */
+  --embun-madu: #F0FFF0;           /* Embun Madu */
+  --putih-hantu: #F8F8FF;         /* Putih Hantu */
+  --renda-kuno: #FDF5E6;            /* Renda Kuno */
+  --putih-bunga: #FFFAF0;        /* Putih Bunga */
+  --cangkang-laut: #FFF5EE;            /* Cangkang Laut */
+  --salju: #FFFAFA;                /* Salju */
+  --gading: #FFFFF0;               /* Gading */
+  --asap-putih: #F5F5F5;         /* Asap Putih */
+
+  /* 🌼 Warna Cerah & Pastel */
+  --sultra-jepang: #FFF8DC;            /* Sutera Jagung */
+  --almond-kupas: #FFEBCD;     /* Almond Kupas */
+  --pepaya-lembut: #FFEFD5;         /* Papaya Lembut */
+  --peach-puff: #FFDAB9;          /* Peach Puff */
+  --lemon-lembut: #FFFACD;       /* Lemon Lembut */
+  --kuning-muda: #FFFFE0;        /* Kuning Muda */
+  --lavender-blush: #FFF0F5;      /* Blush Lavender */
+  --mawar-kabut: #FFE4E1;          /* Mawar Kabut */
+  --pink-muda: #FFB6C1;          /* Pink Muda */
+  --bisque: #FFE4C4;              /* Biskuit */
+  --linen: #FAF0E6;               /* Linen */
+  --cyan-muda: #E0FFFF;          /* Cyan Muda */
+  --kuning-emas-muda: #FAFAD2; /* Kuning Emas Muda */
+
+  /* 🍃 Warna Natural & Netral */
+  --gainsboro: #DCDCDC;           /* Abu Gainsboro */
+  --light-gray: #D3D3D3;          /* Abu Muda */
+  --silver: #C0C0C0;              /* Perak */
+  --light-steel-blue: #B0C4DE;    /* Biru Baja Muda */
+  --powder-blue: #B0E0E6;         /* Biru Bubuk */
+  --light-blue: #ADD8E6;          /* Biru Muda */
+  --light-sky-blue: #87CEFA;      /* Langit Biru Muda */
+  --light-green: #90EE90;         /* Hijau Muda */
+  --light-sea-green: #20B2AA;     /* Hijau Laut Muda */
+
+  /* 🍂 Warna Bumi & Hangat */
+  --wheat: #F5DEB3;               /* Gandum */
+  --burly-wood: #DEB887;          /* Kayu Kasar */
+  --tan: #D2B48C;                 /* Cokelat Tan */
+  --sandy-brown: #F4A460;         /* Cokelat Pasir */
+  --peru: #CD853F;                /* Peru */
+  --rosy-brown: #BC8F8F;          /* Cokelat Mawar */
+  --khaki: #F0E68C;               /* Khaki */
+  --dark-khaki: #BDB76B;          /* Khaki Tua */
+  --pale-goldenrod: #EEE8AA;      /* Emas Pucat */
+
+  /* 🌈 Warna Cerah & Riang */
+  --aqua: #00FFFF;                /* Aqua */
+  --cyan: #00FFFF;                /* Cyan */
+  --turquoise: #40E0D0;           /* Turquoise */
+  --aquamarine: #7FFFD4;          /* Aquamarine */
+  --medium-turquoise: #48D1CC;    /* Turquoise Medium */
+  --light-turquoise: #AFEEEE;     /* Turquoise Muda */
+  --spring-green: #00FF7F;        /* Hijau Musim Semi */
+  --lime: #00FF00;                /* Lime */
+  --lime-green: #32CD32;          /* Hijau Lime */
+  --yellow: #FFFF00;              /* Kuning */
+  --orange: #FFA500;              /* Oranye */
+  --salmon: #FA8072;              /* Salmon */
+  --coral: #FF7F50;               /* Karang */
+  --hot-pink: #FF69B4;            /* Pink Terang */
+  --deep-pink: #FF1493;           /* Pink Tua */
+  --fuchsia: #FF00FF;             /* Fuchsia */
+  --magenta: #FF00FF;             /* Magenta */
+
+  /* 🔥 Warna Gelap & Mencolok */
+  --crimson: #DC143C;             /* Merah Tua */
+  --dark-red: #8B0000;            /* Merah Gelap */
+  --fire-brick: #B22222;          /* Batu Bara */
+  --dark-orange: #FF8C00;         /* Oranye Gelap */
+  --chocolate: #D2691E;           /* Cokelat */
+  --sienna: #A0522D;              /* Sienna */
+  --maroon: #800000;              /* Marun */
+  --brown: #A52A2A;               /* Coklat */
+  --olive: #808000;               /* Zaitun */
+  --dark-green: #006400;          /* Hijau Tua */
+  --forest-green: #228B22;        /* Hijau Hutan */
+  --dark-blue: #00008B;           /* Biru Tua */
+  --midnight-blue: #191970;       /* Biru Tengah Malam */
+  --navy: #000080;                /* Biru Navy */
+  --purple: #800080;              /* Ungu */
+  --indigo: #4B0082;              /* Nila */
+  --dark-violet: #9400D3;         /* Ungu Tua */
+  --dark-magenta: #8B008B;        /* Magenta Tua */
+  --black: #000000;               /* Hitam */
+
+  /* 🎨 Warna Aksen & Dekoratif */
+  --gold: #FFD700;                /* Emas */
+  --goldenrod: #DAA520;           /* Batang Emas */
+  --rebecca-purple: #663399;      /* Ungu Rebecca */
+  --orchid: #DA70D6;              /* Anggrek */
+  --medium-purple: #9370DB;       /* Ungu Medium */
+  --medium-orchid: #BA55D3;       /* Anggrek Medium */
+  --violet: #EE82EE;              /* Violet */
+  --medium-violet-red: #C71585;   /* Merah Violet Medium */
+  --medium-blue: #0000CD;         /* Biru Medium */
+  --royal-blue: #4169E1;          /* Biru Royal */
+  --dodger-blue: #1E90FF;         /* Biru Dodger */
+  --steel-blue: #4682B4;          /* Biru Baja */
+  --slate-blue: #6A5ACD;          /* Biru Batu Tulis */
+  --slate-gray: #708090;          /* Abu Batu Tulis */
+  --dim-gray: #696969;            /* Abu Redup */
+}
