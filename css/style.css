@@ -406,7 +406,7 @@ font-size: var(--p-size);
 }
 
 /* Responsif: jika layar di bawah 700px, gambar full width */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 350px) {
   .gallery-grid-2col {
     flex-direction: column;
     align-items: center;
