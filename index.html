@@ -34,7 +34,7 @@
             <button id="openWebsiteBtn" class="openWebsiteBtn">Buka Undangan Anda</button>
 
             <audio id="background-music" loop>
-                <source src="IKI - You'll be in my heart (Spotify Single)  Music Lyric Video.mp3" type="audio/mpeg">
+                <source src="NIKI - You'll be in my heart (Spotify Single)  Music Lyric Video.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
         </div>
@@ -158,7 +158,7 @@
                 
                 <div class="gift-options-container">
                     <div class="gift-box fade-in-up">
-                        <img src="https://www.bni.co.id/Portals/1/bni-logo-id.png" alt="BNI Logo" class="bank-logo">
+                        <img src="png/bni-logo-id.png" alt="BNI Logo" class="bank-logo">
                         <p class="bank-account-info">
                             a.n: Nama Anda Dalam Rekening<br>
                             No. Rek: 0123456789
@@ -170,13 +170,24 @@
                     </div>
 
                     <div class="gift-box fade-in-up">
-                        <img src="https://bri.co.id/o/bri-corporate-theme/images/bri-logo.png" alt="BRI Logo" class="bank-logo">
+                        <img src="png/bri-logo.png" alt="BRI Logo" class="bank-logo">
                         <p class="bank-account-info">
                             a.n: Nama Anda Dalam Rekening<br>
                             No. Rek: 0123456789101112
                         </p>
                         <button onclick="copyToClipboard('0123456789101112', this)" class="copy-button">
                             <i class="fas fa-copy"></i> Copy Rekening
+                        </button>
+                        <span class="copy-message" style="display:none; color: green; font-size: 0.9em; margin-top: 5px;">Disalin!</span>
+                    </div>
+                    <div class="gift-box fade-in-up">
+                        <img src="png/bri-ewalet.png" alt="BRI Logo" class="bank-logo">
+                        <p class="bank-account-info">
+                            Kirim Kado Melalui E-Wallet An. Nama Anda di E-Wallet<br>
+                            No. Hp: 012345678910
+                        </p>
+                        <button onclick="copyToClipboard('0812345678910', this)" class="copy-button">
+                            <i class="fas fa-copy"></i> Copy No. Hp
                         </button>
                         <span class="copy-message" style="display:none; color: green; font-size: 0.9em; margin-top: 5px;">Disalin!</span>
                     </div>
@@ -239,7 +250,18 @@
             </section>
 
 
-
+        <section id="generate-image-section" class="main-section fade-in-up">
+            <h2 class="text-3xl font-bold text-purple-800 mb-6">Buat Gambar Khusus untuk Kami!</h2>
+            <p class="text-gray-700 mb-4">Masukkan deskripsi gambar yang ingin Anda buat untuk pasangan:</p>
+            <textarea id="imagePromptInput" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 mb-4" rows="3" placeholder="Contoh: Pasangan pengantin di taman bunga dengan gaun putih dan jas hitam."></textarea>
+            <button id="generateImageBtn" class="bg-purple-600 text-white px-6 py-3 rounded-xl font-semibold shadow-md hover:bg-purple-700 transition duration-300 ease-in-out">
+                <i class="fas fa-magic mr-2"></i>Buat Gambar
+            </button>
+            <div id="imageLoadingSpinner" class="spinner hidden"></div>
+            <div id="generatedImageContainer" class="mt-6">
+                <!-- Generated image will be displayed here -->
+            </div>
+        </section>
 
 
 
@@ -256,19 +278,20 @@
                 <li><a href="#opening" class="nav-link"><i class="fas fa-home"></i> <span>Home</span></a></li>
                 <li><a href="#events" class="nav-link"><i class="fas fa-calendar-alt"></i> <span>Acara</span></a></li>
                 <li><a href="#gallery" class="nav-link"><i class="fas fa-images"></i> <span>Galeri</span></a></li>
-                <li><a href="#gift" class="nav-link"><i class="fas fa-gift"></i> <span>Hadiah</span></a></li> 
                 <li><a href="#rsvp" class="nav-link"><i class="fas fa-check-circle"></i> <span>RSVP</span></a></li>
                 <li><a href="#wishes" class="nav-link"><i class="fas fa-comments"></i> <span>Ucapan</span></a></li>
+                <li><a href="#gift" class="nav-link"><i class="fas fa-gift"></i> <span>Hadiah</span></a></li> 
             </ul>
         </nav>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 
-    <!--<script src="js/horizontal-parallax.js"></script>-->
+    <!--<script src="js/parallax-vertical-horizontal.js"></script>-->
     <script src="js/script.js"></script>
     <!--<script src="js/canvas.js"></script>-->
     <script src="js/sakura.js"></script>
+    <script src="js/confetti.js"></script>
 
 </body>
 </html> 
