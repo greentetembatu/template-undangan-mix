@@ -6,14 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const fallingCanvas = document.getElementById('fallingCanvas');
 
     // Fungsi untuk memutar musik
-    function playMusic() {
-        if (backgroundMusic) {
-            backgroundMusic.play().catch(error => {
-                console.log("Autoplay prevented:", error);
-            });
-        }
-    }
 
+
+
+    
     // Event listener untuk tombol "Buka Undangan"
     openWebsiteBtn.addEventListener('click', function() {
         landingOverlay.classList.add('slide-up');
@@ -21,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         landingOverlay.addEventListener('transitionend', function() {
             landingOverlay.classList.add('hidden');
             mainContent.classList.remove('hidden');
-            playMusic();
+
 
             if (typeof confetti === 'function') {
                 confetti({
@@ -40,12 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
 
-            // Panggil inisialisasi parallax horizontal di sini
-            if (typeof window.initHorizontalParallax === 'function') {
-                window.initHorizontalParallax();
-            } else {
-                console.warn("initHorizontalParallax is not defined. Horizontal parallax may not start.");
-            }
+
 
         }, { once: true });
     });
@@ -136,4 +127,87 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener('scroll', reveal);
   reveal(); // Jalankan saat awal
+});
+
+
+
+
+
+
+
+
+
+
+function copyToClipboard(text, buttonElement) {
+    navigator.clipboard.writeText(text).then(() => {
+        // Show success message
+        const messageSpan = buttonElement.nextElementSibling;
+        if (messageSpan && messageSpan.classList.contains('copy-message')) {
+            messageSpan.style.display = 'inline';
+            setTimeout(() => {
+                messageSpan.style.display = 'none';
+            }, 2000); // Hide after 2 seconds
+        }
+        
+        // Optional: Change button text temporarily
+        const originalText = buttonElement.innerHTML;
+        buttonElement.innerHTML = '<i class="fas fa-check"></i> Disalin!';
+        setTimeout(() => {
+            buttonElement.innerHTML = originalText;
+        }, 2000); // Revert button text after 2 seconds
+
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+        alert('Gagal menyalin. Silakan salin manual.'); // Fallback alert
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+const backgroundMusic = document.getElementById('background-music');
+
+// Tambahkan event listener pada tombol "Buka Undangan"
+openWebsiteBtn.addEventListener('click', () => {
+    // Play the music when the button is clicked
+    backgroundMusic.play().catch(error => {
+        console.error("Autoplay was prevented:", error);
+        // Fallback: If autoplay is blocked, you might show a play button later
+    });
+});
+
+// Anda bisa menambahkan tombol mute/unmute jika diinginkan di bagian lain dari website
+// Contoh (opsional, tambahkan tombol di HTML):
+
+const muteButton = document.createElement('button');
+muteButton.innerHTML = '<i class="fas fa-volume-up"></i>';
+muteButton.id = 'muteToggle';
+muteButton.style.position = 'fixed';
+muteButton.style.bottom = '90px';
+muteButton.style.left = '20px';
+muteButton.style.zIndex = '1002';
+muteButton.style.backgroundColor = 'rgba(0,0,0,0.5)';
+muteButton.style.color = 'white';
+muteButton.style.border = 'none';
+muteButton.style.borderRadius = '50%';
+muteButton.style.width = '50px';
+muteButton.style.height = '50px';
+muteButton.style.cursor = 'pointer';
+document.body.appendChild(muteButton);
+
+muteButton.addEventListener('click', () => {
+    if (backgroundMusic.paused) {
+        backgroundMusic.play();
+        muteButton.innerHTML = '<i class="fas fa-volume-up"></i>';
+    } else {
+        backgroundMusic.pause();
+        muteButton.innerHTML = '<i class="fas fa-volume-mute"></i>';
+    }
 });
