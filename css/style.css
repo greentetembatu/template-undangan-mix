@@ -391,7 +391,7 @@ font-family: var(--teks-Pacifico-bersambung);
 font-size: var(--p-size);
 }
 .gallery-grid-2col img {
-  width: 100%;
+  width: 85%;
   height: 250px;
   object-fit: cover;
   border-radius: 15px 50px 15px 50px; /* Bentuk unik */
